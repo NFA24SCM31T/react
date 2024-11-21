@@ -22,8 +22,10 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 // Import custom components
 import BarCharts from "./BarCharts";
+import BarCharts from "./LineCharts"
 import Loader from "./Loader";
 import { ListItemButton } from "@mui/material";
+import LineCharts from "./LineCharts";
 
 const drawerWidth = 240;
 // List of GitHub repositories 
@@ -185,13 +187,13 @@ export default function Home() {
         ) : (
           <div>
             {/* Render barchart component for a monthly created issues for a selected repositories*/}
-            <BarCharts
-              title={`Monthly Created Issues for ${repository.value} in last 1 year`}
+            <LineCharts
+              title={`Line Chart Created Issues for ${repository.value} in last 2 Months`}
               data={githubRepoData?.created}
             />
             {/* Render barchart component for a monthly created issues for a selected repositories*/}
             <BarCharts
-              title={`Monthly Closed Issues for ${repository.value} in last 1 year`}
+              title={`Monthly Closed Issues for ${repository.value} in last 2 Month`}
               data={githubRepoData?.closed}
             />
             <Divider
